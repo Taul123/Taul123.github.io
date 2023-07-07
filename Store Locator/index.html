@@ -1,0 +1,47 @@
+?<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Simple Store Locator - Bing Maps Samples</title>
+
+    <meta charset="utf-8" />
+	<link rel="shortcut icon" href="/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="This code sample demonstrates how to create a store locator in plain javascript." />
+    <meta name="keywords" content="Microsoft maps, map, gis, API, SDK, Bing, Bing Maps" />
+    <meta name="author" content="Microsoft Bing Maps" />
+    <meta name="screenshot" content="screenshot.jpg" />
+
+    <link rel="stylesheet" type="text/css" href="/tutorials/store-locator/css/locator.css" />
+
+    <script src="/tutorials/store-locator/js/locator.js"></script>
+    
+</head>
+<body>
+    <div class="header">
+        <img src="/tutorials/store-locator/images/logo.png" alt="Contoso Coffee" />
+    </div>
+
+    <div class="sidePanel">
+        <div class="searchBar">
+            <input id="searchBox" type="text" value="Seattle" />
+            <input id="searchBtn" type="button" value="Search" />
+        </div>
+        <div id="resultsPanel"></div>
+    </div>
+   
+    <div id="myMap"></div>
+
+    <script>
+        // Dynamic load the Bing Maps Key and Script
+        // Get your own Bing Maps key at https://www.microsoft.com/maps
+        (async () => {
+            let script = document.createElement("script");
+            let bingKey = await fetch("https://samples.azuremaps.com/api/GetBingMapsKey").then(r => r.text()).then(key => { return key });
+            script.setAttribute("src", `https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=${AijlVnd2FMv-_ta_BPgAktkMse6zUMGnid438ph7MJunjJj6BX5rB1FfQw6RFBVL}`);
+            document.body.appendChild(script);
+        })();
+    </script>
+</body>
+</html>
+
+           
